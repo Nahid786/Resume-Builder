@@ -1,0 +1,15 @@
+/* #resume-form{
+    display: none;
+} */
+#resume-template{
+    display: none;
+}
+
+.profile{
+   
+    border-radius: 50%;
+    width: 200px;
+}
+.background{
+    background-color: rgb(189, 186, 186)
+}

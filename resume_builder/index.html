@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Resume building</title>
+</head>
+<body>
+    
+    <div class="container" id="resume-form">
+        <h1 class="text-center my-2">Resume Builder</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Personal Details</h3>
+
+                <div class="form-group mt-2">
+                <label for="firstname">First Name</label>
+                <input type="text" name="" id="fn" class="form-control" placeholder="First Name">
+                </div>
+
+                <!-- <div class="form-group mt-2">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="" id="ln" class="form-control" placeholder="Last Name">
+                </div> -->
+
+                <div class="form-group mt-2">
+                <label for="contactField">Mobile Number</label>
+                <input type="text" name="" id="contactField" class="form-control" placeholder="Mobile Number">
+                </div> 
+
+                <div class="form-group mt-2">
+                <label for="city">City</label>
+                <input type="text" name="" id="city" class="form-control" placeholder="City">
+                </div>  
+
+                <div class="form-group mt-2">
+                <label for="state">State</label>
+                <input type="text" name="" id="state" class="form-control" placeholder="State">
+                </div>
+                <h3>Social Media Links</h3>
+                <div class="form-group mt-2">
+                    <label for="linkdin">Linkdin</label>
+                    <input type="text" name="" id="linkdin" class="form-control" placeholder="Paste linkdin link">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="github">Git Hub</label>
+                        <input type="text" name="" id="github" class="form-control" placeholder="Paste Git Hub link">
+                        </div>
+            
+            </div>
+
+            <div class="col-md-6">
+                <h3>Professional Qualification</h3>
+
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea type="text" name="" class="form-control" placeholder="Enter Here" rows="3" id="objectiveField"></textarea>
+                    </div> 
+
+                    <div class="form-group mt-2" id="we">
+                        <label for="">Skiils</label>
+                        <textarea type="text" name="" class="form-control workfield" placeholder="Enter Here" rows="3"></textarea>
+                       
+                        <!--new textarea-->
+
+                        <div class="container mt-2" id="weAddButton">
+                            <button onclick="addNewEField()" class="btn btn-primary">Add</button>
+                        </div>
+                    </div> 
+
+                    <div class="form-group mt-2" id="aq"> 
+                        <label for="">Acadmic Qualification</label>
+                        <textarea type="text" name="" class="form-control eqField" placeholder="Enter Here" rows="2"></textarea>
+                        
+                         <!--new textarea-->
+
+                        <div class="container mt-2" id="aqAddButton">
+                            <button onclick="addnewAField()" class="btn btn-primary">Add</button>
+                        </div>
+                    </div> 
+
+
+                    
+
+                
+            </div>
+        </div>
+    
+        <div class="container text-center mt-3">
+            <button onclick="generateResume()" class="btn btn-primary btn-lg">Generate Resume</button>
+        </div>
+</div>
+
+<!-- resume template -->
+<div class="container" id="resume-template">
+   <div class="row">
+       <div class="col-md-4 text-center py-3 background">
+           <!-- first row  -->
+           <img src="profile.jpg" alt="" class="img-fluid profile">
+
+           <div class="container">
+                <p id="fnameT">Nahid</p>
+                <!-- <p id="lnameT">Nisha</p> -->
+                <p id="mbT">9843095</p>
+                <p id="cityT">Allahabad</p>
+                <p id="stateT">Uttarpredesh</p>
+                
+           </div>
+           <hr>
+           <p><a href="#" id="ldT">wwww.linkdin.com</a></p>
+           <p><a href="#" id="gitT">wwww.github.com</a></p>
+       </div>
+       <div class="col-md-8 py-5">
+           <!-- second row -->
+           <h1 id="nameT2" class="text-center" style="font-weight: 980;">Nahid Nisha</h1>
+           <!-- objective  -->
+           <div class="card mt-4">
+               <div class="card-header background">
+                   <h3>Objective</h3>
+               </div>
+               <div class="card body" id="obT">
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, officiis assumenda temporibus 
+                       laborum reprehenderit aliquam omnis quidem itaque dolore amet minus provident consectetur 
+                       necessitatibus officia ut rem numquam facere, debitis eveniet, autem exercitationem odio deleniti 
+                       delectus ipsa? Deserunt laudantium mollitia culpa eum quibusdam, in sequi, et, error nam asperiores labore!</p>
+               </div>
+           </div>
+
+           <!-- work experience -->
+
+           <div class="card mt-4">
+            <div class="card-header background">
+                <h3>Skills</h3>
+            </div>
+            <div class="card body">
+               
+                <ul id="weT">
+                   <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, neque.</li>
+              
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, neque.</li>
+            
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, neque.</li>
+            </ul>
+
+            </div>
+        </div>
+
+        <!-- Accedmic Qualification -->
+        <div class="card mt-4">
+            <div class="card-header background">
+                <h3>Accedmic Qualification</h3>
+            </div>
+            <div class="card body">
+               
+                <ul id="aqT">
+                   <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, neque.</li>
+               
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, neque.</li>
+            
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, neque.</li>
+            </ul>
+
+            </div>
+        </div>
+
+        <div class="container mt-3 text-center">
+            <button onclick="printresume()" class="btn background">
+                Print Resume
+            </button>
+        </div>
+
+       </div>
+   </div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+   <script src="script.js"></script> 
+</body>
+</html>
